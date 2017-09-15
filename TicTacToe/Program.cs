@@ -39,7 +39,7 @@ namespace TicTacToe
             } while (isWin == false);
         }
 
-        //Ask player generic
+        //Ask generic player
         public static void AskPlayer(int playerNumber, string XorO)
         {
             string playerLocation;
@@ -49,41 +49,9 @@ namespace TicTacToe
                 playerLocation = Console.ReadLine();
             } while (tempValueArray[int.Parse(playerLocation)] == "X" || tempValueArray[int.Parse(playerLocation)] == "O");
 
-            //Console.Write($"Player {playerNumber} choose a location to place {XorY} : ");
-            //string playerLocation = Console.ReadLine();
-            //if(tempValueArray[int.Parse(playerLocation)] == "X" || tempValueArray[int.Parse(playerLocation)] == "Y")
-            //{
-            //    Console.WriteLine("You can not make entry to this location!!!!!");
-            //    Thread.Sleep(milliseconds);
-            //    Thread.Sleep(milliseconds);
-            //    Console.Clear();
-            //    Board();
-            //    AskPlayer(playerNumber, XorY);
-            //}
-
             tempValueArray[int.Parse(playerLocation)] = XorO;
         }
-
-        public static void callAgain()
-        {
-
-        }
-        ////Ask player 1 to place an X in the board
-        //public static void AskPlayer1()
-        //{
-        //    Console.Write("Player 1 chose a location to place X: ");
-        //    string player1Location = Console.ReadLine();
-        //    tempValueArray[int.Parse(player1Location)] = "X";
-        //}
-
-        ////Ask player 2 to place an Y in the board
-        //public static void AskPlayer2()
-        //{
-        //    Console.Write("Player 2 chose a location to place O: ");
-        //    string player2Location = Console.ReadLine();
-        //    tempValueArray[int.Parse(player2Location)] = "O";
-        //}
-
+        
         //Display Board
         public static void Board()
         {
