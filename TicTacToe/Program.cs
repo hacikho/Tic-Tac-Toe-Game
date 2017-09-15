@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+/*
+2 player Tic-Tac-TOe Game in 3x3 display board.  
+*/
 namespace TicTacToe
 {
     class Program
     {
         static bool isWin = false;
-        //DIsplay Board numbers
+        //Display Board numbers
         static string[] tempValueArray = new string[9] { "0", "1", "2", "3", "4", "5", "6", "7", "8" };
+
         static void Main(string[] args)
         {
-
             //Main action to get input from player and update borad, and check who win the game
             do
             {
@@ -46,7 +48,7 @@ namespace TicTacToe
             tempValueArray[int.Parse(player1Location)] = "X";
         }
 
-        //Ask player 1 to place an X in the board
+        //Ask player 2 to place an Y in the board
         public static void AskPlayer2()
         {
             Console.Write("Player 2 chose a location to place O: ");
@@ -66,20 +68,6 @@ namespace TicTacToe
 
         public static bool CheckForWin()
         {
-
-            ////Another horizontal check
-            //if(tempValueArray[0]== tempValueArray[1] && tempValueArray[0] == tempValueArray[2])
-            //{
-            //    Console.WriteLine($"Player {tempValueArray[0]} win the game");
-            //}else if(tempValueArray[3] == tempValueArray[4] && tempValueArray[3] == tempValueArray[5])
-            //{
-            //    Console.WriteLine($"Player {tempValueArray[3]} win the game");
-            //}
-            //else if (tempValueArray[6] == tempValueArray[7] && tempValueArray[6] == tempValueArray[8])
-            //{
-            //    Console.WriteLine($"Player {tempValueArray[6]} win the game");
-            //}
-
             //Horizontal win check
             for (int i=0; i<9; i = i+3)
             {
@@ -88,17 +76,9 @@ namespace TicTacToe
                     Console.WriteLine($"Player {tempValueArray[i]} win the game");
                     isWin = true;
                     return isWin;
-                    //break;
                 }
-                //}else if (tempValueArray[i] == tempValueArray[i + 1] && tempValueArray[i] == tempValueArray[i + 2] && tempValueArray[i] == "Y")
-                //{
-                //    Console.WriteLine("Player X win the game");
-                //    isWin = true;
-                //    return isWin;
-                //    //break;
-                //}
-              
             }
+
             //Vertical win check
             for (int i = 0; i < 3; i = i + 1)
             {
@@ -107,16 +87,7 @@ namespace TicTacToe
                     Console.WriteLine($"Player {tempValueArray[i]} win the game");
                     isWin = true;
                     return isWin;
-                    //break;
                 }
-                //}else if (tempValueArray[i] == tempValueArray[i + 1] && tempValueArray[i] == tempValueArray[i + 2] && tempValueArray[i] == "Y")
-                //{
-                //    Console.WriteLine("Player X win the game");
-                //    isWin = true;
-                //    return isWin;
-                //    //break;
-                //}
-
             }
 
             //Diagonal win check
@@ -125,7 +96,6 @@ namespace TicTacToe
                 Console.WriteLine($"Player {tempValueArray[0]} win the game");
                 isWin = true;
                 return isWin;
-                //break;
             }else if(tempValueArray[2] == tempValueArray[4] && tempValueArray[2] == tempValueArray[6])
             {
                 Console.WriteLine($"Player {tempValueArray[2]} win the game");
@@ -133,13 +103,6 @@ namespace TicTacToe
                 return isWin;
             }
             return isWin;
-            //Console.WriteLine("boomm");
-        }
-
-        //useless method for now
-        public static void WhoWin(bool value)
-        {
-            Console.WriteLine("player " + value + "win");
         }
     }
 }
